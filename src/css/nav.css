@@ -1,0 +1,165 @@
+:root {
+  --bg-black:       #050505;
+  --bg-deep:        #08090c;
+  --bg-primary:     #0b0c10;
+  --bg-secondary:   #101218;
+  --bg-tertiary:    #161820;
+
+  --bg-slate:       #11151c;
+  --bg-blue-black:  #0c111a;
+  --bg-indigo:      #11101b;
+
+  --surface-1:      #12141a;
+  --surface-2:      #181b23;
+  --surface-3:      #20232c;
+
+  --surface-glass:  rgba(255, 255, 255, 0.045);
+  --surface-hover:  rgba(255, 255, 255, 0.075);
+
+  --border:         rgba(255, 255, 255, 0.09);
+  --border-subtle:  rgba(255, 255, 255, 0.05);
+  --border-bright:  rgba(255, 255, 255, 0.16);
+
+  --text-primary:   #f4f5f7;
+  --text-secondary: #a7abb5;
+  --text-muted:     #6f7480;
+  --text-disabled:  #4b4f59;
+
+  --text-inverse:   #08090c;
+
+  --accent:         #8b7cff;
+  --accent-light:   #a99fff;
+  --accent-dark:    #6558d9;
+
+  --accent-glow:    rgba(139, 124, 255, 0.35);
+  --accent-soft:    rgba(139, 124, 255, 0.12);
+
+  --cyan:            #6ee7f9;
+  --cyan-light:      #9af2ff;
+  --cyan-dark:       #39bdd2;
+
+  --cyan-glow:       rgba(110, 231, 249, 0.28);
+  --cyan-soft:       rgba(110, 231, 249, 0.10);
+
+  --violet:          #c084fc;
+  --pink:            #f0abfc;
+  --warm-glow:       rgba(192, 132, 252, 0.20);
+
+  --gradient-hero: radial-gradient(circle at 70% 20%,rgba(100, 80, 255, 0.14), transparent 35%);
+  --gradient-accent: linear-gradient(135deg, #a99fff 0%, #8b7cff 45%, #6ee7f9 100%);
+  --gradient-dark: linear-gradient( 180deg, #050505 0%, #0b0c10 100%);
+  --gradient-section: linear-gradient( 180deg, #050505 0%, #0c111a 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.025)); 
+  --gradient-object: linear-gradient(135deg, #b7b0ff 0%, #7165e8 45%, #3c8eaa 100%);
+
+
+  --glow-purple: 0 0 80px rgba(139, 124, 255, 0.20);
+  --glow-cyan: 0 0 80px rgba(110, 231, 249, 0.16);
+  --glow-small: 0 0 30px rgba(139, 124, 255, 0.18);
+
+  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 15px 50px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 30px 100px rgba(0, 0, 0, 0.50);
+
+  --light-purple:   rgba(169, 159, 255, 0.9);
+  --light-cyan:     rgba(110, 231, 249, 0.8);
+  --light-white:    rgba(255, 255, 255, 0.75);
+
+  --ambient-purple: radial-gradient(circle, rgba(139, 124, 255, 0.18), transparent 65%);
+  --ambient-cyan: radial-gradient(circle, rgba(110, 231, 249, 0.12), transparent 65%);
+}
+
+.nav {
+    background-color: var(--surface-glass);
+    width: 100%;
+    position: sticky;
+    top: 0;
+    height: 58px;
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+    backdrop-filter: blur(16px) saturate(180%);
+    color: var(--text-primary);
+}
+
+.inner-nav {
+    position: relative;
+    z-index: 101;
+    width: clamp(600px, 80vw, 1200px);
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+}
+.nav-right a {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    outline: none;
+    transition: 0.2s;
+}
+.nav-right a:hover {
+    color: var(--text-secondary);
+}
+.nav-right a::after {
+    content: "";
+    background: var(--gradient-accent);
+    width: 0;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.2s cubic-bezier(0.95, 0.94, 0.48, 1.86);
+}
+.link-active {
+    color: transparent;
+    background: var(--gradient-accent);
+    background-clip: text;
+}
+.link-active::after {
+    width: 100% !important;
+}
+.link-active:hover {
+    color: transparent !important;
+}
+
+@media (max-width: 768px) {
+    .nav {
+        background-color: var(--surface-glass);
+        width: calc(100% - 40px);
+        position: sticky;
+        top: 10px;
+        margin: 0 auto;
+        height: 58px;
+        z-index: 1000;
+        backdrop-filter: blur(16px) saturate(180%);
+        color: var(--text-primary);
+        border-radius: 20px;
+        border: 1px solid var(--border);
+    }
+
+    .inner-nav {
+        width: auto;
+    }
+
+    .logo {
+        display: none;
+    }
+    .nav-right {
+        margin-inline: auto;
+        gap: clamp(10px, 10vw, 40px);
+    }
+}
