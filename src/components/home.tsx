@@ -8,7 +8,6 @@ import { Flip } from "gsap/Flip"
 import { motion, AnimatePresence } from "framer-motion"
 import Projects from "./projects"
 import Contact from "./contact"
-import { s } from "framer-motion/client"
 
 gsap.registerPlugin(ScrollTrigger, Flip, ScrollToPlugin, DrawSVGPlugin)
 ScrollTrigger.config({ ignoreMobileResize: true })

@@ -10,14 +10,14 @@ function scrollUp() {
 export default function Contact() {
     return (
         <section className="bg-main" id="contact">
-            <div className="inner-section">
+            <div className="inner-section inner-contact">
                 <div className="contact-left">
                     <header className="contact-header">
                         <h1 className="header text-purple">Get in touch with me</h1>
                         <p className="contact-pg">Have a project in mind, want to collaborate or just say hi? <br />Send me a message</p>
                     </header>
                     <div className="contact-info">
-                        <div className="contact-email-container">
+                       <div className="contact-email-container">
                             <span className="contact-email">Email</span>
                             <a className="email" href="mailto:contact.yanny0@gmail.com">contact.yanny0@gmail.com</a>
                         </div>
